@@ -1,0 +1,18 @@
+{% extends "trial/trial_base.html" %}
+
+{% block 'body_block' %}
+    {% if not form.instance.pk %}
+        <h1>Create School</h1>
+    {% else %}
+        <h1>Update School</h1>
+    {% endif %}
+    <div class="jumbotron">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit">
+        </form>                                        
+    </div>
+
+
+{% endblock 'body_block' %}

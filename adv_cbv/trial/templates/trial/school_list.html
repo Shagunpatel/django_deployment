@@ -1,0 +1,16 @@
+{% extends "trial/trial_base.html" %}
+
+ {% block 'body_block'  %}
+    <h1>List of Schools</h1>
+    <ol>
+        {% for i in schools %}
+            <h2><li><a href="{% url 'trial:detail' i.id %}">{{i.name}}</a></li></h2>
+            {% comment %} <a class='btn btn-primary' href="{% url 'trial:update' pk=i.id%}">UPDATE</a> {% endcomment %}
+            {% comment %} <h2><li>{{i.principal}}</li></h2> {% endcomment %}
+
+        {% endfor %}
+
+    </ol>
+   
+ 
+ {% endblock 'body_block' %}

@@ -1,0 +1,20 @@
+{% extends "trial/trial_base.html" %}
+    {% block 'body_block' %}
+    <div class="jumbotron">
+        <h1>School Details :</h1>
+        <h3>Name: {{school_detail.name}}</h3>
+        <h3>Principal: {{school_detail.principal}}</h3>
+        <h3>Location: {{school_detail.location}}</h3>
+        <a class='btn btn-primary' href="{% url 'trial:update' pk=school_detail.pk %}">UPDATE</a>
+        <a class='btn btn-danger' href="{% url 'trial:delete' pk=school_detail.pk %}">DELETE</a>
+
+
+        <h1>Students:</h1>
+        {% for i in school_detail.rn_students.all %}
+        <h3>Name: {{i.name}}</h3>
+        <h3>Age: {{i.age}}</h3>
+        {% endfor %}    
+
+
+    {% endblock 'body_block' %}
+</div>
